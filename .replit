@@ -1,5 +1,7 @@
-run = "cowsay Configure me!"
-entrypoint = "README.md"
+run = "npm run build; npm run start"
+entrypoint = "src/index.ts"
+modules = ["nodejs-20"]
 
 [nix]
 channel = "stable-24_05"
+
