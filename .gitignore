@@ -1,0 +1,5 @@
+./dist
+.replit
+package-lock.json
+./node_modules
+./.upm
