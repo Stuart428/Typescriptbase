@@ -5,3 +5,24 @@ modules = ["nodejs-20"]
 [nix]
 channel = "stable-24_05"
 
+[workflows]
+runButton = "Build"
+
+[[workflows.workflow]]
+name = "Lint"
+mode = "sequential"
+author = 40839033
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run lint"
+
+[[workflows.workflow]]
+name = "Build"
+mode = "sequential"
+author = 40839033
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run build"
+
