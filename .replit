@@ -6,7 +6,7 @@ modules = ["nodejs-20"]
 channel = "stable-24_05"
 
 [workflows]
-runButton = "Build"
+runButton = "Lint,Test,Build"
 
 [[workflows.workflow]]
 name = "Lint"
@@ -25,4 +25,30 @@ author = 40839033
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "npm run build"
+
+[[workflows.workflow]]
+name = "Test"
+mode = "sequential"
+author = 40839033
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run test"
+
+[[workflows.workflow]]
+name = "Lint,Test,Build"
+mode = "sequential"
+author = 40839033
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Lint"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Test"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Build"
 
