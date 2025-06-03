@@ -8,7 +8,6 @@ export default [
 
   // TypeScript ESLint recommended config
   ...tseslint.configs.recommended,
-
   // Custom config object
   {
     rules: {
@@ -21,5 +20,8 @@ export default [
       // Allow undefined globals like `console`
       'no-undef': 'off',
     },
+  },
+  {
+    ignores: ["dist/*"],
   },
 ];
