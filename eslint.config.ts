@@ -1,14 +1,10 @@
-// eslint.config.mjs
+// eslint.config.ts
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
 
-export default [
-  // Base ESLint recommended config
+export default tseslint.config(
   eslint.configs.recommended,
-
-  // TypeScript ESLint recommended config
   ...tseslint.configs.recommended,
-  // Custom config object
   {
     rules: {
       // Downgrade unused vars to warning
@@ -16,13 +12,14 @@ export default [
 
       // Allow namespaces
       '@typescript-eslint/no-namespace': 'off',
-      'camelcase': 'error',
+
+      camelcase: 'error',
 
       // Allow undefined globals like `console`
       'no-undef': 'off',
     },
   },
   {
-    ignores: ["dist/*"],
+    ignores: ['dist/*'],
   },
-];
+);
