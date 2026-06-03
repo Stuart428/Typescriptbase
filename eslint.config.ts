@@ -11,7 +11,7 @@ export default tseslint.config(
       '@typescript-eslint/no-unused-vars': 'warn',
 
       // Allow namespaces
-      '@typescript-eslint/no-namespace': 'off',
+      '@typescript-eslint/no-namespace': 'warn',
 
       camelcase: 'error',
 
