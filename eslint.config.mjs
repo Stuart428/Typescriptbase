@@ -16,6 +16,7 @@ export default [
 
       // Allow namespaces
       '@typescript-eslint/no-namespace': 'off',
+      'camelcase': 'error',
 
       // Allow undefined globals like `console`
       'no-undef': 'off',
